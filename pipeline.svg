@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">HelloBoss 人机协作流程</title><desc id="desc">你选择岗位并打开 JD，插件一键截图，模型分析岗位和个人经历，插件生成招呼语并复制，你核对、粘贴并发送。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#60728b"/></marker></defs>
+<rect x="1" y="1" width="1198" height="298" rx="22" fill="#f8fafc" stroke="#cbd5e1"/>
+<g font-family="system-ui, Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+<text x="36" y="42" font-size="14" font-weight="700" letter-spacing="2" fill="#475569">HELLOBOSS / WORKFLOW</text>
+<text x="36" y="81" font-size="30" font-weight="700" fill="#0f172a">从岗位详情到定制招呼语</text>
+<path d="M36 101H1164" stroke="#d9e2ec"/>
+<g transform="translate(36 123)"><rect width="208" height="114" rx="12" fill="#eff6ff" stroke="#93b7ef"/><text x="14" y="25" font-size="12" font-weight="700" letter-spacing=".6" fill="#1d4ed8">01 / HUMAN</text><text x="14" y="59" font-size="23" font-weight="700" fill="#0f172a">选择岗位</text><text x="14" y="86" font-size="15" fill="#334155">打开岗位详情 JD</text></g><path d="M248 180h13" stroke="#60728b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g transform="translate(266 123)"><rect width="208" height="114" rx="12" fill="#ecfdf5" stroke="#82c9bb"/><text x="14" y="25" font-size="12" font-weight="700" letter-spacing=".6" fill="#0f766e">02 / HELLOBOSS</text><text x="14" y="59" font-size="23" font-weight="700" fill="#0f172a">一键截图</text><text x="14" y="86" font-size="15" fill="#334155">采集当前 JD 页面</text></g><path d="M478 180h13" stroke="#60728b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g transform="translate(496 123)"><rect width="208" height="114" rx="12" fill="#ecfdf5" stroke="#82c9bb"/><text x="14" y="25" font-size="12" font-weight="700" letter-spacing=".6" fill="#0f766e">03 / MODEL API</text><text x="14" y="59" font-size="23" font-weight="700" fill="#0f172a">匹配经历</text><text x="14" y="86" font-size="15" fill="#334155">分析 JD 与个人经历</text></g><path d="M708 180h13" stroke="#60728b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g transform="translate(726 123)"><rect width="208" height="114" rx="12" fill="#ecfdf5" stroke="#82c9bb"/><text x="14" y="25" font-size="12" font-weight="700" letter-spacing=".6" fill="#0f766e">04 / HELLOBOSS</text><text x="14" y="59" font-size="23" font-weight="700" fill="#0f172a">生成并复制</text><text x="14" y="86" font-size="15" fill="#334155">定制招呼语 → 剪贴板</text></g><path d="M938 180h13" stroke="#60728b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g transform="translate(956 123)"><rect width="208" height="114" rx="12" fill="#eff6ff" stroke="#93b7ef"/><text x="14" y="25" font-size="12" font-weight="700" letter-spacing=".6" fill="#1d4ed8">05 / HUMAN</text><text x="14" y="59" font-size="23" font-weight="700" fill="#0f172a">核对并发送</text><text x="14" y="86" font-size="15" fill="#334155">粘贴到 BOSS 聊天框</text></g>
+<circle cx="42" cy="266" r="5" fill="#2563eb"/><text x="54" y="271" font-size="14" fill="#334155">人工操作</text>
+<circle cx="157" cy="266" r="5" fill="#0f766e"/><text x="169" y="271" font-size="14" fill="#334155">插件与模型</text>
+</g></svg>
