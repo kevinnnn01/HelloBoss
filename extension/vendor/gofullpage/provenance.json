@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/mrcoles/full-page-screen-capture-chrome-extension",
+  "commit": "d1b6bbbf4c3f8101d787dd737e5476a5be082014",
+  "license": "MIT",
+  "files": [
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mrcoles/full-page-screen-capture-chrome-extension/d1b6bbbf4c3f8101d787dd737e5476a5be082014/LICENSE",
+      "sha256": "d107bb27124070779fae220e4cc238120ffc069bedff1fab0fcee5ea24a8cb3d"
+    },
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/mrcoles/full-page-screen-capture-chrome-extension/d1b6bbbf4c3f8101d787dd737e5476a5be082014/README.md",
+      "sha256": "4d88e52ff156df8cd95122935bd3ccf24dfc3a750f8786e9e21dacec65defdb8"
+    },
+    {
+      "file": "page.js",
+      "url": "https://raw.githubusercontent.com/mrcoles/full-page-screen-capture-chrome-extension/d1b6bbbf4c3f8101d787dd737e5476a5be082014/page.js",
+      "sha256": "b253072ad2c171597270ea5894cbaafc973ca6a6dfd4e0b7856f87182e327ba6"
+    },
+    {
+      "file": "api.js",
+      "url": "https://raw.githubusercontent.com/mrcoles/full-page-screen-capture-chrome-extension/d1b6bbbf4c3f8101d787dd737e5476a5be082014/api.js",
+      "sha256": "cccc791df660249988d350207cb6de1b78049b700e0413981d8fb8b0ba22d07a"
+    },
+    {
+      "file": "manifest.json",
+      "url": "https://raw.githubusercontent.com/mrcoles/full-page-screen-capture-chrome-extension/d1b6bbbf4c3f8101d787dd737e5476a5be082014/manifest.json",
+      "sha256": "0651278d99fabb2eee8e22a5497917e8b09573a0fc34f8153b8d4a49c875748b"
+    }
+  ]
+}

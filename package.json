@@ -1,0 +1,9 @@
+{
+  "name": "helloboss",
+  "private": true,
+  "version": "0.4.8",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

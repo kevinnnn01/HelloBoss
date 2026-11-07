@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HelloBoss</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <div class="brandmark" aria-hidden="true">Hi<span>·</span></div>
+      <div><p class="eyebrow">从经历，到一次合适的开场</p><h1>HelloBoss <span id="version" class="badge">0.4.8</span></h1></div>
+    </header>
+    <div class="workbar">
+      <fieldset id="quick-actions" class="button-row">
+        <button id="capture" class="primary" type="button">一键截屏并复制招呼语</button>
+        <button id="generate" class="secondary" type="button">生成招呼语 ↗</button>
+      </fieldset>
+      <div id="activity" class="activity" hidden>
+        <p id="activity-status" class="status" role="status" aria-live="polite"></p>
+        <button id="cancel-top" class="secondary" type="button" hidden>取消</button>
+      </div>
+    </div>
+
+    <section id="result-card" class="card result-card" aria-labelledby="result-title">
+      <div class="section-heading"><h2 id="result-title">你的开场白</h2><span id="char-count" class="muted">0 字符</span></div>
+      <textarea id="greeting" rows="6" placeholder="生成的招呼语会出现在这里，你可以继续修改。" aria-label="可编辑的招呼语正文"></textarea>
+      <div class="result-footer"><span id="result-source" class="helper">复制内容仅包含正文。</span><button id="copy" class="copy-button" type="button" disabled>复制正文</button></div>
+      <div id="notes" class="notes" hidden></div>
+    </section>
+
+    <fieldset id="inputs">
+      <details class="card">
+        <summary><span class="section-heading"><h2>截图预览与上传</h2><span id="image-count" class="muted">0 / 12</span></span></summary>
+        <div class="details-content">
+        <div id="drop-zone" class="drop-zone" tabindex="0" aria-label="在此粘贴或拖入岗位截图">
+          <span class="upload-symbol" aria-hidden="true">↥</span>
+          <strong>粘贴、拖入或上传截图</strong>
+          <span class="muted">Ctrl + V · PNG / JPG / WebP</span>
+          <button id="upload" class="secondary" type="button">上传图片</button>
+        </div>
+        <p id="capture-source" class="helper">截图将在下方预览；未配置模型时也可以先截屏。</p>
+        <input id="image-file" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+        <div id="image-list" class="image-list"></div>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary><span class="section-heading"><h2>配置</h2><span id="config-status" class="muted">展开设置</span></span></summary>
+        <div class="details-content">
+        <div class="save-row"><button id="choose-folder" type="button" class="secondary">选择配置文件夹</button><button id="reload-folder" type="button" class="secondary">重新读取</button></div>
+        <p id="folder-status" class="helper" role="status">选择 你的本地配置目录，自动读取经历、风格和 key 文件夹中的接口配置。</p>
+        <label for="capture-mode">截屏范围</label>
+        <select id="capture-mode"><option value="gofullpage">GoFullPage 开源核心（拼接截图）</option><option value="auto">自动滚动岗位详情（逐段截图）</option><option value="page">自动滚动整个网页</option><option value="visible">仅截当前可见区</option></select>
+        <label class="checkbox-label"><input id="auto-generate" type="checkbox" checked> 截屏后自动生成并复制正文</label>
+        <button id="authorize-capture" class="secondary" type="button">启用截图权限</button>
+        <p class="helper">遇到访问权限报错时使用。Chrome 将申请所有网站访问权限，用于滚动和截图；授权本身不会上传网页，可在扩展设置中撤销。</p>
+        <p class="helper">每次截屏替换旧截图，完成后恢复原滚动位置。期间保持目标标签页不变。最多 12 张，每张 6 MB，总计 12 MB。</p>
+
+      <details id="materials" class="card">
+        <summary><span class="section-heading"><h2><span class="step">02</span>经历与表达风格</h2><span class="disclosure">⌄</span></span></summary>
+        <div class="details-content">
+          <div class="label-row"><label for="experience">个人经历 Markdown</label><button id="import-experience" class="text-button" type="button">导入 .md</button></div>
+          <textarea id="experience" rows="7" maxlength="100000" placeholder="粘贴真实教育、实习、项目经历及到岗条件。可使用 Markdown。"></textarea>
+          <input id="experience-file" type="file" accept=".md,.markdown,.txt" hidden>
+          <div class="label-row"><label for="style">打招呼风格 Markdown</label><button id="import-style" class="text-button" type="button">导入 .md</button></div>
+          <textarea id="style" rows="6" maxlength="100000" placeholder="写作结构、语气、字数偏好，以及你认可的示例文案。"></textarea>
+          <input id="style-file" type="file" accept=".md,.markdown,.txt" hidden>
+          <p class="helper">经历提供事实，风格提供写法。示例中的学校、数字和身份不会作为你的经历来源。</p>
+        </div>
+      </details>
+
+      <details id="settings" class="card">
+        <summary><span class="section-heading"><h2><span class="step">03</span>模型连接</h2><span id="provider-label" class="muted">Qwen</span></span></summary>
+        <div class="details-content">
+          <label for="provider">模型供应商</label>
+          <select id="provider"><option value="qwen">Qwen · 阿里云百炼</option><option value="deepseek">DeepSeek</option><option value="kimi">Kimi · Moonshot</option></select>
+          <label for="model">模型名称 <span class="muted">须支持图片输入</span></label>
+          <input id="model" type="text" spellcheck="false" autocomplete="off">
+          <label for="base-url">Base URL</label><input id="base-url" type="url" spellcheck="false" autocomplete="off">
+          <p id="provider-hint" class="helper"></p>
+          <label for="api-key">API Key</label><input id="api-key" type="password" placeholder="输入对应平台的 API Key" autocomplete="off" spellcheck="false">
+          <p class="helper">Key 仅保存在本次浏览器会话，重启后需重填。经历与风格可保存在本机。</p>
+        </div>
+      </details>
+      <div class="save-row"><button id="save" type="button" class="secondary">保存资料与配置</button><span id="save-status" class="muted" role="status"></span></div>
+      <p id="destination" class="helper"></p>
+        </div>
+      </details>
+    </fieldset>
+
+    <footer>集成 GoFullPage 历史开源核心（MIT）· 截图仅本次保留</footer>
+  </main>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>

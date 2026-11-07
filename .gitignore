@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+key/
+config/
+my-config/
+materials/
+tmp/
+urlbase.txt
+apikey.txt
+keyurlbase.txt
+keyapikey.txt

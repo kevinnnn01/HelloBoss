@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "HelloBoss",
+  "description": "用岗位截图、个人经历与风格 Markdown 生成可编辑、可复制的求职招呼语。",
+  "version": "0.4.8",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "sidePanel", "storage", "clipboardWrite", "offscreen"],
+  "optional_host_permissions": ["https://*/*", "<all_urls>"],
+  "action": { "default_title": "打开 HelloBoss" },
+  "side_panel": { "default_path": "panel.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"
+  }
+}
